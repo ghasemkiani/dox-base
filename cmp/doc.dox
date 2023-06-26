@@ -1,0 +1,19 @@
+<cmn:g xmlns:cmn="urn:dox:cmn">
+	<cmn:script>
+		props.res ||= "res";
+		if (typeof props.res === "string") {
+			props.res = context.parent[props.res] = {};
+		}
+		context.resDoc = props.res;
+	</cmn:script>
+	<html xmlns="http://www.w3.org/1999/xhtml">
+		<cmn:script>context.resDoc.whtml = wnode;</cmn:script>
+		<head>
+			<cmn:script>context.resDoc.whead = wnode;</cmn:script>
+		</head>
+		<body>
+			<cmn:script>context.resDoc.wbody = wnode;</cmn:script>
+			<cmn:script>templateComponent.renderBody(wnode);</cmn:script>
+		</body>
+	</html>
+</cmn:g>

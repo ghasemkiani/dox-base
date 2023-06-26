@@ -1,0 +1,25 @@
+{
+	"name": "@ghasemkiani/dox-base",
+	"version": "1.0.0",
+	"description": "Base DOX components",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://gitlab.com/ghasemkiani/dox-base.git"
+	},
+	"keywords": [
+		"xml",
+		"dox",
+		"component"
+	],
+	"author": "Ghasem Kiani",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://gitlab.com/ghasemkiani/dox-base/issues"
+	},
+	"homepage": "https://gitlab.com/ghasemkiani/dox-base#readme"
+}
