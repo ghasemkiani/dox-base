@@ -1,5 +1,5 @@
 <script xmlns="urn:dox:cmn">
-	templateComponent.renderBody(wnode);
+	await templateComponent.toRenderBody(wnode);
 	
 	(async function () {
 		const path = await import("node:path");

@@ -1,4 +1,4 @@
-<cmn:g xmlns:cmn="urn:dox:cmn">
+<cmn:g xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base">
 	<cmn:script>
 		props.res ||= "res";
 		if (typeof props.res === "string") {
@@ -13,7 +13,7 @@
 		</head>
 		<body>
 			<cmn:script>context.resDoc.wbody = wnode;</cmn:script>
-			<cmn:script>templateComponent.renderBody(wnode);</cmn:script>
+			<b:body component="{context.templateComponent}"/>
 		</body>
 	</html>
 </cmn:g>

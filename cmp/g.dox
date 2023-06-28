@@ -1,1 +1,1 @@
-<script xmlns="urn:dox:cmn">templateComponent.renderBody(wnode);</script>
+<script xmlns="urn:dox:cmn">await templateComponent.toRenderBody(wnode);</script>
