@@ -1,0 +1,7 @@
+<script xmlns="urn:dox:cmn">
+	let {target, msg, ...event} = templateComponent.props;
+	target ||= context.renderer;
+	target.sub(msg, async event =&gt; {
+		await templateComponent.toRenderBody(wnode);
+	});
+</script>
