@@ -1,7 +1,0 @@
-<script xmlns="urn:dox:cmn">
-	// await templateComponent.toRenderBody(wnode);
-	
-	let {target, msg, ...event} = templateComponent.props;
-	target ||= context.renderer;
-	target.pub(msg, event);
-</script>

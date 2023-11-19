@@ -1,0 +1,7 @@
+<script xmlns="urn:dox:cmn">
+	let {f} = templateComponent.props;
+	if (typeof f === "function") {
+		let data = props;
+		await f(data);
+	}
+</script>
