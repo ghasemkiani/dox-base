@@ -1,0 +1,13 @@
+<script xmlns="urn:dox:cmn">
+	let {items, target, name, n} = context.templateComponent.props;
+	if (!Number.isNaN(n)) {
+		n = Number(n);
+		items = [...new Array(n)].map((a, i) =&gt; i);
+	}
+	target ||= context;
+	name ||= "item";
+	for (let item of items) {
+		target[name] = item;
+		await context.templateComponent.toRenderBody(wnode);
+	}
+</script>

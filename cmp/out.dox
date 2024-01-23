@@ -1,4 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base">
-	<cmn:script>wnode.t(context.templateComponent.props.text);</cmn:script>
-</cmn:g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base"><cmn:script>wnode.t(context.templateComponent.props.text);</cmn:script></cmn:g>

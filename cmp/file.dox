@@ -1,15 +1,12 @@
 <script xmlns="urn:dox:cmn">
 	await templateComponent.toRenderBody(wnode);
 	
-	(async function () {
-		const path = await import("node:path");
-		const {Textual} = await import("@ghasemkiani/base");
-		
-		let {dirname} = context;
-		let {uri} = templateComponent.props;
-		let fn = path.join(dirname, uri);
-		let {text: string} = templateComponent.props;
-		new Textual({fn, string}).write();
-		context.root.pub("file-saved", {uri, fn});
-	})();
+	const path = await import("node:path");
+	const {Textual} = await import("@ghasemkiani/base");
+	
+	let {dirname} = context;
+	let {uri} = props;
+	let fn = path.join(dirname, uri);
+	let {text: string} = props;
+	new Textual({fn, string}).write();
 </script>

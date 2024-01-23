@@ -1,0 +1,7 @@
+<cmn:script xmlns:cmn="urn:dox:cmn">
+	let target = templateComponent.props.target || context;
+	component.sub("prop", ({name, value}) =&gt; {
+		target[name] = value;
+	});
+	await templateComponent.toRenderBody(wnode);
+</cmn:script>
