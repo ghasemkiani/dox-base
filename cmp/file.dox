@@ -6,7 +6,8 @@
 	
 	let {dirname} = context;
 	let {uri} = props;
+	let {cs} = props;
 	let fn = path.join(dirname, uri);
 	let {text: string} = props;
-	new Textual({fn, string}).write();
+	new Textual({fn, cs, string}).write();
 </script>

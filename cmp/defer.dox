@@ -1,9 +1,9 @@
 <script xmlns="urn:dox:cmn">
-	let {target, name} = templateComponent.props;
+	let {target, name} = props;
 	target ||= context;
 	name ||= "defer";
 	target[name] = (async (data) =&gt; {
 		props.data = data;
-		await templateComponent.toRenderBody(wnode);
+		await templateComponent.toRenderBody(node);
 	});
 </script>

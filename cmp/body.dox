@@ -1,1 +1,3 @@
-<script xmlns="urn:dox:cmn">await props.component.toRenderBody(wnode, props.f);</script>
+<script xmlns="urn:dox:cmn">
+	await props.component.toRenderBody(node, props.f);
+</script>

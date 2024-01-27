@@ -1,10 +1,13 @@
 <doc xmlns="urn:dox:base" xmlns:cmn="urn:dox:cmn" xmlns:h="http://www.w3.org/1999/xhtml">
+	<cmn:script>
+		console.log("Hello world!");
+	</cmn:script>
 	<cmn:script>context.resDoc = context.parent.res;</cmn:script>
-	<g wnode="{context.resDoc.whead}">
+	<g node="{context.resDoc.nhead}">
 		<h:title>My Book</h:title>
 	</g>
-	<h:h1>Hello</h:h1>
-	<file text="{`&lt;!DOCTYPE html&gt;${context.resDoc.whtml.string}`}" uri="out.html"/>
+	<h:h1>Hello world!</h:h1>
+	<file text="{component.x.toStr(context.resDoc, true)}" uri="out.html"/>
 	<cmn:script>
 		context.root.sub("file-saved", ({uri, fn}) =&gt; {
 			console.log({uri, fn});

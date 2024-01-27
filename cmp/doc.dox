@@ -7,12 +7,12 @@
 		context.resDoc = props.res;
 	</cmn:script>
 	<html xmlns="http://www.w3.org/1999/xhtml">
-		<cmn:script>context.resDoc.whtml = wnode;</cmn:script>
+		<cmn:script>context.resDoc.nhtml = node;</cmn:script>
 		<head>
-			<cmn:script>context.resDoc.whead = wnode;</cmn:script>
+			<cmn:script>context.resDoc.nhead = node;</cmn:script>
 		</head>
 		<body>
-			<cmn:script>context.resDoc.wbody = wnode;</cmn:script>
+			<cmn:script>context.resDoc.nbody = node;</cmn:script>
 			<b:body component="{context.templateComponent}"/>
 		</body>
 	</html>
