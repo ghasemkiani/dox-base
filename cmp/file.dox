@@ -1,5 +1,5 @@
 <script xmlns="urn:dox:cmn">
-	await templateComponent.toRenderBody(wnode);
+	await templateComponent.toRenderBody(node);
 	
 	const path = await import("node:path");
 	const {Textual} = await import("@ghasemkiani/base");

@@ -3,5 +3,5 @@
 	component.sub("prop", ({name, value}) =&gt; {
 		target[name] = value;
 	});
-	await templateComponent.toRenderBody(wnode);
+	await templateComponent.toRenderBody(node);
 </cmn:script>

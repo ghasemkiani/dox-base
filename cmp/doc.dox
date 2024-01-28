@@ -1,4 +1,4 @@
-<cmn:g xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base">
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base">
 	<cmn:script>
 		props.res ||= "res";
 		if (typeof props.res === "string") {
@@ -6,7 +6,7 @@
 		}
 		context.resDoc = props.res;
 	</cmn:script>
-	<html xmlns="http://www.w3.org/1999/xhtml">
+	<html>
 		<cmn:script>context.resDoc.nhtml = node;</cmn:script>
 		<head>
 			<cmn:script>context.resDoc.nhead = node;</cmn:script>
