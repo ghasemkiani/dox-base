@@ -1,0 +1,11 @@
+<cmn:script xmlns:cmn="urn:dox:cmn">
+	let {ns, tags, nm, cmp} = context.templateComponent.props;
+	renderer.translator[ns] ||= {};
+	if (tags) {
+		for (let [nm, cmp] of Object.entries(tags)) {
+			renderer.translator[ns][nm] = cmp;
+		}
+	} else {
+		renderer.translator[ns][nm] = cmp;
+	}
+</cmn:script>

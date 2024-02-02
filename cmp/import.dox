@@ -1,0 +1,18 @@
+<cmn:script xmlns:cmn="urn:dox:cmn">
+	if (!context.root.imports) {
+		context.root.imports = {};
+	}
+	
+	const path = await import("node:path");
+	const url = await import("node:url");
+	
+	let {name, as, uri} = context.templateComponent.props;
+	
+	let x = await import(url.pathToFileURL(path.join(context.dirname, uri)));
+	
+	if (name !== "*") {
+		x = x[name];
+	}
+	
+	context.imports[as || name] = x;
+</cmn:script>
