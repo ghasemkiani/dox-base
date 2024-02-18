@@ -1,0 +1,17 @@
+<script xmlns="urn:dox:cmn">
+	<![CDATA[
+		let {name, array, range} = props;
+		name ||= "item";
+		if (!array) {
+			range ||= 0;
+			array = new Array(range);
+			for (let i = 0; i < range; i++) {
+				array[i] = i;
+			}
+		}
+		for (let item of array) {
+			context[name] = item;
+			await templateComponent.toRenderBody(node);
+		}
+	]]>
+</script>

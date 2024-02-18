@@ -1,0 +1,3 @@
+<script xmlns="urn:dox:cmn">
+	node.replaceWith(...renderer.x.nodes(node));
+</script>

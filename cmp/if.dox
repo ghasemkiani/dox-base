@@ -1,0 +1,6 @@
+<script xmlns="urn:dox:cmn">
+	let {cond} = props;
+	if (cond) {
+		await templateComponent.toRenderBody(node);
+	}
+</script>

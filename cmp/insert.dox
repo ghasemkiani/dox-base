@@ -1,0 +1,4 @@
+<script xmlns="urn:dox:cmn">
+	let {nodes} = props;
+	renderer.x.aps(node, nodes);
+</script>
