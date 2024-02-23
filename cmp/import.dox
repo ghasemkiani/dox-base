@@ -7,11 +7,19 @@
 	const url = await import("node:url");
 	
 	let {name, as, uri} = context.templateComponent.props;
+	if (!uri.startsWith("node:")) {
+		uri = url.pathToFileURL(path.join(context.dirname, uri));
+	}
+	let x = await import(uri);
 	
-	let x = await import(url.pathToFileURL(path.join(context.dirname, uri)));
-	
-	if (name !== "*") {
-		x = x[name];
+	if (name) {
+		if (name !== "*") {
+			x = x[name];
+		}
+	} else {
+		if ("default" in x) {
+			x = x.default;
+		}
 	}
 	
 	context.imports[as || name] = x;
