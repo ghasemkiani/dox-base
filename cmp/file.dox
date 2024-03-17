@@ -4,10 +4,14 @@
 	const path = await import("node:path");
 	const {Textual} = await import("@ghasemkiani/base");
 	
-	let {dirname} = context;
+	let {dirname} = props;
+	dirname ||= context.dirname;
 	let {uri} = props;
 	let {cs} = props;
-	let fn = path.join(dirname, uri);
+	let fn = uri;
+	if (!path.isAbsolute(fn)) {
+		fn = path.join(dirname, fn);
+	}
 	let {text: string} = props;
 	new Textual({fn, cs, string}).write();
 </script>

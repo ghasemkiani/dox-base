@@ -1,0 +1,1 @@
+<cmn:g xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base"><b:body component="{context.templateComponent}" f="{(context) =&gt; (context.ss = renderer.x.ss())}"/><style><cmn:script>renderer.x.t(node, context.ss.toString());</cmn:script></style></cmn:g>

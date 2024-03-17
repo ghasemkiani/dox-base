@@ -1,8 +1,8 @@
-<script xmlns="urn:dox:cmn">
+<cmn:script xmlns:cmn="urn:dox:cmn">
 	let {ctx, f} = props;
 	if (ctx) {
 		await props.component.toRenderBodyWith(node, ctx);
 	} else {
 		await props.component.toRenderBody(node, props.f);
 	}
-</script>
+</cmn:script>
