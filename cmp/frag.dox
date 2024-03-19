@@ -1,8 +1,12 @@
 <script xmlns="urn:dox:cmn">
-	let {target, name, f} = props;
+	let {target, name, f, ctx} = props;
 	target ||= context;
 	name ||= "frag";
 	let frag = renderer.x.dfrag();
 	target[name] = frag;
-	await props.component.toRenderBody(frag, f);
+	if (ctx) {
+		await props.component.toRenderBodyWith(frag, ctx);
+	} else {
+		await props.component.toRenderBody(frag, f);
+	}
 </script>
