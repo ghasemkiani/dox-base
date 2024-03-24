@@ -1,0 +1,14 @@
+<script xmlns="urn:dox:cmn">
+	try {
+		let target = props["target"] || context.root;
+		let msg = props["msg"] || "msg";
+		target.sub(msg, (...events) =&gt; {
+			await context.templateComponent.toRenderBody(node, context =&gt; {
+				context.event = events[0];
+				context.events = events;
+			});
+		});
+	} catch (e) {
+		console.log(`Error in b:sub\n${e.message}`);
+	}
+</script>

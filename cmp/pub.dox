@@ -1,0 +1,16 @@
+<script xmlns="urn:dox:cmn">
+	try {
+		let target = props["target"] || context.root;
+		let msg = props["msg"] || "msg";
+		let events = props["events"] || [props["event"]];
+		if (("events" in props) || ("event" in props)) {
+			let dummy = renderer.x.dfrag();
+			await context.templateComponent.toRenderBody(dummy);
+			let nodes = renderer.x.nodes(dummy);
+			events = [{nodes}];
+		}
+		target.pub(msg, ...events);
+	} catch (e) {
+		console.log(`Error in b:pub\n${e.message}`);
+	}
+</script>
