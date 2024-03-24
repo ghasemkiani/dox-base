@@ -1,0 +1,10 @@
+<script xmlns="urn:dox:cmn">
+	try {
+		let {nodes} = props;
+		if (Array.isArray(nodes)) {
+			renderer.x.apsc(node, nodes);
+		} else {
+			renderer.x.apc(node, nodes);
+		}
+	} catch (e) {}
+</script>
