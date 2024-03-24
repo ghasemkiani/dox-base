@@ -2,8 +2,8 @@
 	try {
 		let target = props["target"] || context.root;
 		let msg = props["msg"] || "msg";
-		target.sub(msg, (...events) =&gt; {
-			await context.templateComponent.toRenderBody(node, context =&gt; {
+		target.sub(msg, async (...events) =&gt; {
+			await templateComponent.toRenderBody(node, context =&gt; {
 				context.event = events[0];
 				context.events = events;
 			});
