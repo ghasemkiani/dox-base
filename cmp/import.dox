@@ -6,11 +6,11 @@
 	const path = await import("node:path");
 	const url = await import("node:url");
 	
-	let {name, as, uri} = context.templateComponent.props;
-	if (!uri.startsWith("node:")) {
+	let {name, as, mod, uri} = context.templateComponent.props;
+	if (!mod &amp;&amp; !uri.startsWith("node:")) {
 		uri = url.pathToFileURL(path.join(context.dirname, uri));
 	}
-	let x = await import(uri);
+	let x = await import(mod || uri);
 	
 	if (name) {
 		if (name !== "*") {
