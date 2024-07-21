@@ -5,18 +5,19 @@
 	const {Textual} = await import("@ghasemkiani/base");
 	
 	let {dirname} = props;
-	dirname ||= context.dirname;
 	let {uri} = props;
 	let {cs} = props;
+	let {doc} = props;
+	let {ugly} = props;
+	
+	dirname ||= context.dirname;
 	let fn = uri;
 	if (!path.isAbsolute(fn)) {
 		fn = path.join(dirname, fn);
 	}
-	let {node: node1} = props;
-	let {ugly} = props;
-	if (!node1) {
-		node1 = renderer.x.odoc(node);
+	if (!doc) {
+		doc = renderer.x.odoc(node);
 	}
-	let string = renderer.x.toStr(node1, !ugly);
+	let string = renderer.x.toStr(doc, !ugly);
 	new Textual({fn, cs, string}).write();
 </script>
