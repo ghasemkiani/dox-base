@@ -1,7 +1,11 @@
 <cmn:script xmlns:cmn="urn:dox:cmn">
-	let {ctx, f} = props;
+  const {cutil} = await import("@ghasemkiani/base");
+  
+	let {ctx, ctx1, f} = props;
 	if (ctx) {
 		await props.component.toRenderBodyWith(node, ctx);
+	} else if (ctx1) {
+		await props.component.toRenderBody(node, ctx =&gt; cutil.extend(ctx, ctx1));
 	} else if (f) {
 		await props.component.toRenderBody(node, f);
 	} else {

@@ -1,12 +1,14 @@
 <cmn:script xmlns="http://www.w3.org/1999/xhtml" xmlns:cmn="urn:dox:cmn" xmlns:b="urn:dox:base">
-  let name = props.name || "doc";
-	let document = renderer.x.odoc(node).implementation.createHTMLDocument();
+	let name = props.name || "doc";
+	let document = renderer.x.odoc(node);
 	let nhtml = renderer.x.q(document, "html");
 	let nhead = renderer.x.q(document, "head");
 	let nbody = renderer.x.q(document, "body");
-	renderer.x.chain(nhead, node =&gt; {
-		renderer.x.ch(node, "meta[charset=UTF-8]");
-	});
+	if (!renderer.x.q(nhead, "meta[charset]")) {
+		renderer.x.chain(nhead, node =&gt; {
+			renderer.x.ch(node, "meta[charset=UTF-8]");
+		});
+	}
 	node = nbody;
 	await context.templateComponent.toRenderBody(node, ctx =&gt; {
 		ctx[name] = {document, nhtml, nhead, nbody};
